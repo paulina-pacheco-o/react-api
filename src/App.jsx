@@ -1,15 +1,22 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 
 function App() {
+
   const [actors, setActors] = useState([]);
 
   function fetchActors() {
     axios.get("https://lanciweb.github.io/demo/api/actors/").then((resp) => {
-      console.log((resp.data));
+      setActors((resp.data));
+      console.log(actors)
 
     });
   }
+
+  useEffect(() => {
+    fetchActors()
+  }, []);
 
   return (
     <>
