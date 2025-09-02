@@ -27,12 +27,12 @@ function App() {
           </div>
           {actors.map((actor) => {
             return (
-              <div className="col-12" key={actor.id}>
+              <div className="col-sm-4 mt-3 p-2" key={actor.id}>
                 <div className="card">
                   <img src={actor.image} />
                   <div>
                     <h4>{actor.name}</h4>
-                    <ul>
+                    <ul className="list-unstyled">
                       <li>{actor.birth_year}-{actor.death_year}</li>
                       <li>{actor.nationality}</li>
                       <li>{actor.biography}</li>
